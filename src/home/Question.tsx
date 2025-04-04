@@ -10,8 +10,8 @@ function Question() {
 
   return (
     <div className="flex flex-col items-center justify-center ">
-     <h2>This is for question Section</h2>
-     <CardWithForm/>
+     {question.length > 0 &&  <CardWithForm/> }
+  
     </div>
   )
 }

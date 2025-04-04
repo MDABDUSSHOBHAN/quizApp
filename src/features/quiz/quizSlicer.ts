@@ -10,7 +10,7 @@ interface TQuiz {
 
 }
 const initialState:TQuiz = {
-  question:quizData,
+  question:[],
   currentQuestionIndex:0,
   userAnswer:Array(quizData.length).fill(null),
   quizComplete:false
@@ -43,10 +43,13 @@ export const quizSlice = createSlice({
     },
     completeQuiz: (state) => {
       state.quizComplete = true
+    },
+    setQuiz:(state,action) =>{
+      state.question = action.payload;
     }
 
   }
 })
 
-export const {setAnswer,nextQuestion,previousQuestion,completeQuiz} = quizSlice.actions;
+export const {setQuiz,setAnswer,nextQuestion,previousQuestion,completeQuiz} = quizSlice.actions;
 export default quizSlice.reducer
